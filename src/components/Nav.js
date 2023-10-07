@@ -15,9 +15,9 @@ const menuItems = [
 function Nav() {
     return (
         <nav>
-            <ul>
+            <ul className='nav-list'>
                 {menuItems.map((item) => (
-                    <li key={item.link}>
+                    <li className='nav-link' key={item.link}>
                         <a href={item.link}>{item.label}</a>
                     </li>
                 ))}

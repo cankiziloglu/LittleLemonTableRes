@@ -1,11 +1,15 @@
 import React from 'react';
+import Hero from './Hero';
+import Highlights from './Highlights';
+import About from './About';
 
 function Main() {
     return (
-        <div>
-            <h1>Welcome to my app!</h1>
-            <p>This is the main component.</p>
-        </div>
+        <main>
+            <Hero />
+            <Highlights />
+            <About />
+        </main>
     );
 }
 
