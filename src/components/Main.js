@@ -5,7 +5,7 @@ import About from "./About";
 
 function Main() {
   return (
-    <main>
+    <main className="main">
       <Hero />
       <Highlights />
       <About />

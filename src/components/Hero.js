@@ -7,18 +7,22 @@ const ReserveClick = () => {
 
 function Hero() {
   return (
-    <section className="hero">
-      <h1 className="hero-title">Little Lemon</h1>
-      <h2 className="hero-subtitle">Chicago</h2>
-      <p className="hero-text">
-        We are a family owned Mediterranean reataurant, focused on traditional
-        recipes served with a modern twist.
-      </p>
-      <button className="hero-button" onClick={ReserveClick}>
-        Reserve a Table
-      </button>
-      <img className="hero-image" src={hero} alt="little lemon restaurant" />
-    </section>
+    <div className="hero-wrapper">
+      <section className="hero">
+        <div className="hero-text">
+          <h1 className="hero-title">Little Lemon</h1>
+          <h2 className="hero-subtitle">Chicago</h2>
+          <p className="hero-p">
+            We are a family owned Mediterranean reataurant, focused on traditional
+            recipes served with a modern twist.
+          </p>
+          <button className="btn hero-btn" onClick={ReserveClick}>
+            Reserve a Table
+          </button>
+        </div>
+        <img className="hero-image" src={hero} alt="little lemon restaurant" />
+      </section>
+    </div>
   );
 }
 

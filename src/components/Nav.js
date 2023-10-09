@@ -13,7 +13,7 @@ const menuItems = [
 
 function Nav() {
   return (
-    <nav>
+    <nav className="nav">
       <ul className="nav-list">
         {menuItems.map((item) => (
           <li className="nav-link" key={item.link}>

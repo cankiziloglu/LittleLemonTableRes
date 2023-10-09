@@ -1,3 +1,4 @@
+/*  
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +20,7 @@ body {
   width: 100%;
 }
 
-/* Header component styling */
+/* Header component styling
 
 header {
   display: flex;
@@ -59,7 +60,7 @@ header .nav-link a:hover {
   border-radius: 16px;
 }
 
-/* Main Section Styling */
+/* Main Section Styling
 
 main {
   margin: 16 auto;
@@ -114,3 +115,5 @@ main {
   grid-column: 2 / span 2;
   margin: 16px 0;
 }
+
+*/
