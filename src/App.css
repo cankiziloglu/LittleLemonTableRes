@@ -1,54 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
-    box-sizing: border-box;
-    font-size: 62.5%;
-    max-width: 1440px;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  max-width: 1440px;
 }
 
 body {
-    margin: 0 auto;
-    padding: 0;
-    font-family: 'Karla', sans-serif;
-    font-size: 1.6rem;
-    background: #fff;
-    width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Karla", sans-serif;
+  font-size: 1.6rem;
+  background: #fff;
+  width: 100%;
 }
 
+/* Header component styling */
+
 header {
-    display: grid;
-    margin: 16px auto;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 1fr;
-    
-    align-items: center;
+  display: flex;
+  margin: 16px auto;
+  width: 80%;
 }
 
 header img {
-    grid-column: 3 / span 2;
-    justify-items: start;
-    height: 60px;
+  flex-grow: 1;
+  justify-items: start;
+  height: 60px;
 }
 
 header nav {
-    grid-column: 5 / span 6;
+  flex-grow: 3;
+  margin: auto;
 }
 
 header .nav-list {
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 header .nav-link a {
-    text-decoration: none;
-    color: #495E57;
-    font-weight: 800;
-    font-size: 2rem;
-    padding: 0.5rem;
+  text-decoration: none;
+  color: #495e57;
+  font-weight: 800;
+  font-size: 2rem;
+  padding: 0.5rem;
 }
 
 header .nav-link a:hover {
-    background-color: #edefee;
-    border-radius: 16px;
+  background-color: #edefee;
+  border-radius: 16px;
 }
 
+/* Main Section Styling */
 
+main {
+  margin: 16 auto;
+}
+
+.hero {
+  display: grid;
+  margin: 16px auto;
+  width: 80%;
+  background-color: #495e57;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, auto);
+}
+
+.hero-image {
+  grid-column: 4 / span 2;
+  grid-row: 1 / 6;
+}
+
+.hero-title {
+  font-family: "Markazi Text", serif;
+  font-size: 6.4rem;
+  font-weight: 500;
+  color: #f4ce14;
+  text-align: left;
+  grid-row: 1 / 2;
+  grid-column: 2 / span 2;
+}
+
+.hero-subtitle {
+  font-family: "Markazi Text", serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  color: #edefee;
+  text-align: left;
+  grid-row: 2 / 3;
+  grid-column: 2 / span 2;
+}
+
+.hero-text {
+  font-family: "Karla", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #edefee;
+  text-align: left;
+  grid-row: 3 / 4;
+  grid-column: 2 / span 2;
+}
+
+.hero-button {
+  grid-row: 4 / 5;
+  grid-column: 2 / span 2;
+  margin: 16px 0;
+}
