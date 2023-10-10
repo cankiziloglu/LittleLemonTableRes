@@ -1,11 +1,11 @@
 import React from "react";
 import hero from "../assets/hero.png";
-
-const ReserveClick = () => {
-  alert("You clicked the Reserve a Table button.");
-};
+import { useNavigate } from "react-router-dom";
 
 function Hero() {
+
+  const navigate = useNavigate();
+  
   return (
     <div className="hero-wrapper">
       <section className="hero">
@@ -13,10 +13,15 @@ function Hero() {
           <h1 className="hero-title">Little Lemon</h1>
           <h2 className="hero-subtitle">Chicago</h2>
           <p className="hero-p">
-            We are a family owned Mediterranean reataurant, focused on traditional
-            recipes served with a modern twist.
+            We are a family owned Mediterranean reataurant, focused on
+            traditional recipes served with a modern twist.
           </p>
-          <button className="btn hero-btn" onClick={ReserveClick}>
+          <button
+            className="btn hero-btn"
+            onClick={() => {
+              return navigate("/reservations");
+            }}
+          >
             Reserve a Table
           </button>
         </div>

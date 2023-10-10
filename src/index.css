@@ -29,7 +29,8 @@ html {
   --subtitle: 400 4rem "Markazi Text", serif;
   --m_subtitle: 400 3rem "Markazi Text", serif;
   --section-title: 800 2rem "Karla", sans-serif;
-  --card-title: 700 1.8rem "Karla", sans-serif;
+  --card-title: 500 2.4rem "Markazi Text", serif;
+  --card-price: 700 1.8rem "Karla", sans-serif;
   --cta: 500 1.8rem "Karla", sans-serif;
   --p: 400 1.6rem "Karla", sans-serif;
 }
@@ -81,11 +82,11 @@ h6 {
 }
 
 .logo {
-  max-height: 60px;
-  
+  height: 60px;
+  margin: 0;
 }
 
-.nav-list {  
+.nav-list {
   display: none;
   list-style: none;
   position: absolute;
@@ -96,24 +97,22 @@ h6 {
 
 .nav-list.open {
   display: block;
-  z-index:5
+  z-index: 5;
 }
 
-
-
-.hamburger.open :nth-child(1){
+.hamburger.open :nth-child(1) {
   transform: rotate(45deg);
   position: relative;
   top: 12px;
 }
 
-.hamburger.open :nth-child(3){
+.hamburger.open :nth-child(3) {
   transform: rotate(-45deg);
   position: relative;
   top: -12px;
 }
 
-.hamburger.open :nth-child(2){
+.hamburger.open :nth-child(2) {
   opacity: 0;
 }
 
@@ -149,13 +148,17 @@ h6 {
   transition: 0.2s ease-in-out;
 }
 
-.nav-link a:hover {
+.nav-link a:not(.active):hover {
   background-color: var(--high-col-light);
   border-radius: 16px;
 }
 
-@media screen and (min-width: 850px) {
-  
+.active {
+  background-color: var(--secondary-col-light);
+  border-radius: 16px;
+}
+
+@media screen and (min-width: 800px) {
   .logo {
     flex-basis: 25%;
   }
@@ -164,7 +167,7 @@ h6 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    position:static;
+    position: static;
   }
 
   .nav-link a {
@@ -175,9 +178,7 @@ h6 {
   .hamburger {
     display: none;
   }
-
 }
-
 
 /* Hero Section */
 
@@ -185,7 +186,7 @@ h6 {
   height: 80%;
   background: var(--primary-col-dark);
   content: "";
-  position:absolute;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
@@ -268,3 +269,5 @@ h6 {
     align-self: flex-start;
   }
 }
+
+
