@@ -4,7 +4,6 @@ import Aboutpage from "./pages/Aboutpage";
 import Reservations from "./pages/Reservations";
 import { Routes, Route } from "react-router-dom";
 
-
 function App() {
   return (
     <>
@@ -18,7 +17,6 @@ function App() {
       </Routes>
     </>
   );
-
 }
 
 export default App;
