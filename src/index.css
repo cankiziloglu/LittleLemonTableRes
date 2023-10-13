@@ -39,6 +39,7 @@ body {
   --card-price: 700 1.6rem "Karla", sans-serif;
   --cta: 500 1.8rem "Karla", sans-serif;
   --p: 400 1.6rem "Karla", sans-serif;
+  --err: 500 1.4rem "Karla", sans-serif;
 }
 
 /* img {
@@ -74,6 +75,11 @@ h6 {
 
 .btn:hover {
   background-color: var(--secondary-col-light);
+}
+
+.btn:disabled {
+  background-color: var(--high-col-light);
+  color: #999;
 }
 
 /* ======================= */
@@ -567,6 +573,7 @@ h6 {
   font: var(--title);
 }
 
+
 /* ======================= */
 /* Booking Section  */
 /* ======================= */
@@ -600,8 +607,8 @@ h6 {
 }
 
 .reserve {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
   width: 100%;
 }
@@ -615,19 +622,31 @@ h6 {
   color: var(--high-col-light);
   justify-items: center;
   padding: 1rem;
+  margin: 0 auto;
+  width: 90%;
 }
 
-.book-form input:not([type="radio"]),
-.book-form select {
+.book-form input:not([type="radio"]):not([type="checkbox"]),
+.book-form select,
+.book-form textarea {
   display: block;
-  padding: 0.7rem;
-  width: 80%;
+  padding: 1rem;
+  font: var(--cta);
+  width: 100%;
+  color: var(--high-col-dark);
+  border: none;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.25);
+  background-color: var(--high-col-light);
+  border-radius: 8px;
+  margin: 0.5rem 0;
 }
 
-.book-form input[type="radio"] {
+.book-form input[type="radio"],
+.book-form input[type="checkbox"] {
   margin: 1rem;
   position: relative;
   top: 2px;
+  font-size: 5rem;
 }
 
 .book-title {
@@ -636,7 +655,137 @@ h6 {
   padding: 1rem;
 }
 
+.error {
+  color: red;
+  font: var(--err);
+}
+
+.confirm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.confirm-text {
+  font: var(--p);
+  color: var(--high-col-light);
+  padding: 1rem;
+}
+
+.back-btn {
+  background: none;
+  color: var(--high-col-dark);
+  font: var(--m_subtitle);
+  border: 1px solid var(--primary-col-light);
+  background-color: var(--secondary-col-light);
+  font: var(--cta);
+  padding: 1.5rem;
+  order: -2;
+  width: 80%;
+  margin: 1rem auto;
+  border-radius: 16px;
+}
+
+.back-btn i {
+  margin-right: 1.5rem;
+}
+
+.res-details {
+  display: grid;
+  gap: 0.5rem;
+  width: 100%;
+  font: var(--cta);
+  color: var(--high-col-light);
+  padding: 2rem;
+  order: -1;
+  background-color: var(--high-col-dark);
+  border-radius: 16px;
+}
+
+.res-details h3 {
+  font: var(--section-title);
+  color: var(--primary-col-light);
+}
+
+
+@media screen and (min-width: 568px) {
+  
+  .terms {
+    grid-row: 6 / 7;
+  }
+
+  .res-details h3 {
+    display: grid;
+    grid-column: span 2;
+  }
+
+  .res-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    grid-column: 1 / 1;
+    grid-row: 3 / 5;
+  }
+
+  .back-btn {
+    grid-column: span 2;
+    justify-self: start;
+    margin:1rem 0;
+    width: 60%
+  }
+
+  .confirm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .reserve {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .confirm-text {
+    grid-column: span 2;
+  } 
+
+  .book-form label {
+    margin:0;
+  }
+
+  .requests {
+    grid-row: 5 / 7;
+  }
+}
+
+
+
+/* ======================= */
+/* Confirmation Section  */
+/* ======================= */
+
+.confirm-wrapper {
+  background-color: var(--high-col-light);
+}
+
+.confirm-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  height: 40vh;
+}
+
 .confirm-title {
+  margin: 10rem auto;
+  text-align: center;
+  font: var(--m_subtitle);
+}
+
+.confirm-p {
+  font: var(--card-title);
+  color: var(--high-col-dark);
+  padding: 1rem;
   margin: 5rem auto;
+  width: 80%;
   text-align: center;
 }
