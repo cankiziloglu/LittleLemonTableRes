@@ -10,9 +10,9 @@ const ConfirmedBooking = () => {
       <div className="confirm-img">
         <h1 className="confirm-title">Thank You!</h1>
         <p className="confirm-p">
-          Your reservation has been confirmed. We look forward to seeing you!
+          Your reservation has been confirmed. Details are below. We look
+          forward to seeing you!
         </p>
-        
         <img src={bkimg1} alt="Little Lemon Restaurant" />
       </div>
       <Footer />

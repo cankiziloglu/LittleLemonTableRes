@@ -28,7 +28,7 @@ function Booking() {
   const submitForm = (formData) => {
     submitAPI(formData) === true
       ? navigate("/confirm")
-      : alert("submit not working");
+      : alert("An error occured. Please try again");
   };
 
   return (

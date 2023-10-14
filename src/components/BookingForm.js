@@ -70,9 +70,9 @@ const BookingForm = ({ availableTimes, dispatch, submit }) => {
     mode: "onTouched",
     defaultValues: {
       seating: "Indoor",
-      date: Date(),
+      date: new Date(),
       time: "",
-      guests: 1,
+      guests: 2,
       occasion: "",
       firstname: "",
       lastname: "",
@@ -97,6 +97,7 @@ const BookingForm = ({ availableTimes, dispatch, submit }) => {
           className="book-form"
           onSubmit={handleSubmit(bookSubmit)}
           id="booking-form"
+          role="form"
         >
           {step === 1 && (
             <section className="reserve">
@@ -117,6 +118,7 @@ const BookingForm = ({ availableTimes, dispatch, submit }) => {
                 <input
                   {...register("date")}
                   type="date"
+                  aria-required="true"
                   onChange={(e) => {
                     dispatch({ date: e.target.value });
                   }}
@@ -126,7 +128,7 @@ const BookingForm = ({ availableTimes, dispatch, submit }) => {
 
               <label>
                 Choose time
-                <select {...register("time")}>
+                <select {...register("time")} aria-required="true">
                   <option>Choose Time</option>
                   {availableTimes.map((avtime) => (
                     <option key={avtime} value={avtime}>
@@ -139,7 +141,11 @@ const BookingForm = ({ availableTimes, dispatch, submit }) => {
 
               <label>
                 Number of guests
-                <input {...register("guests")} type="number"></input>
+                <input
+                  {...register("guests")}
+                  type="number"
+                  aria-required="true"
+                ></input>
                 {errors.guests && (
                   <p className="error">{errors.guests.message}</p>
                 )}
@@ -147,7 +153,7 @@ const BookingForm = ({ availableTimes, dispatch, submit }) => {
 
               <label>
                 Occasion
-                <select {...register("occasion")}>
+                <select {...register("occasion")} aria-required="true">
                   <option>Occasion</option>
                   <option value="No occasion">No Special Occasion</option>
                   <option value="Birthday">Birthday</option>
@@ -174,7 +180,12 @@ const BookingForm = ({ availableTimes, dispatch, submit }) => {
 
               <label>
                 First Name
-                <input {...register("firstname")} type="text"></input>
+                <input
+                  {...register("firstname")}
+                  type="text"
+                  aria-required="true"
+                  autoComplete="given-name"
+                ></input>
                 {errors.firstname && (
                   <p className="error">{errors.firstname.message}</p>
                 )}
@@ -182,7 +193,12 @@ const BookingForm = ({ availableTimes, dispatch, submit }) => {
 
               <label>
                 Last Name
-                <input {...register("lastname")} type="text"></input>
+                <input
+                  {...register("lastname")}
+                  type="text"
+                  aria-required="true"
+                  autoComplete="family-name"
+                ></input>
                 {errors.lastname && (
                   <p className="error">{errors.lastname.message}</p>
                 )}
@@ -191,16 +207,20 @@ const BookingForm = ({ availableTimes, dispatch, submit }) => {
               <div className="res-details">
                 <h3>Reservation Details</h3>
                 <p>
-                  <b>Date:</b> {getValues("date")}
+                  <b>Date:</b> <br />
+                  {getValues("date")}
                 </p>
                 <p>
-                  <b>Time:</b> {getValues("time")}{" "}
+                  <b>Time:</b> <br />
+                  {getValues("time")}{" "}
                 </p>
                 <p>
-                  <b>Guests:</b> {getValues("guests")}
+                  <b>Guests:</b> <br />
+                  {getValues("guests")}
                 </p>
                 <p>
-                  <b>Occasion:</b> {getValues("occasion")}
+                  <b>Occasion:</b> <br />
+                  {getValues("occasion")}
                 </p>
                 <p>
                   <b>Seating:</b> {getValues("seating")}
@@ -209,7 +229,12 @@ const BookingForm = ({ availableTimes, dispatch, submit }) => {
 
               <label>
                 Email
-                <input {...register("email")} type="email"></input>
+                <input
+                  {...register("email")}
+                  type="email"
+                  aria-required="true"
+                  autoComplete="email"
+                ></input>
                 {errors.email && (
                   <p className="error">{errors.email.message}</p>
                 )}
@@ -221,6 +246,7 @@ const BookingForm = ({ availableTimes, dispatch, submit }) => {
                   rows={5}
                   {...register("requests")}
                   type="text"
+                  placeholder="Please enter any special requests here"
                 ></textarea>
                 {errors.requests && (
                   <p className="error">{errors.requests.message}</p>
@@ -228,8 +254,12 @@ const BookingForm = ({ availableTimes, dispatch, submit }) => {
               </label>
 
               <label className="terms">
-                <input {...register("terms")} type="checkbox"></input>I agree to
-                the terms and conditions
+                <input
+                  {...register("terms")}
+                  type="checkbox"
+                  aria-required="true"
+                ></input>
+                I agree to the terms and conditions
                 {errors.terms && (
                   <p className="error">{errors.terms.message}</p>
                 )}
