@@ -128,7 +128,10 @@ const BookingForm = ({ availableTimes, dispatch, submit }) => {
 
               <label>
                 Choose time
-                <select {...register("time")} aria-required="true">
+                <select
+                  {...register("time")}
+                  aria-required="true"
+                >
                   <option>Choose Time</option>
                   {availableTimes.map((avtime) => (
                     <option key={avtime} value={avtime}>
@@ -145,15 +148,20 @@ const BookingForm = ({ availableTimes, dispatch, submit }) => {
                   {...register("guests")}
                   type="number"
                   aria-required="true"
+                  data-testid="guests"
                 ></input>
                 {errors.guests && (
-                  <p className="error">{errors.guests.message}</p>
+                  <p className="error" data-testid="error">{errors.guests.message}</p>
                 )}
               </label>
 
               <label>
                 Occasion
-                <select {...register("occasion")} aria-required="true">
+                <select
+                  {...register("occasion")}
+                  aria-required="true"
+                  data-testid="occasion"
+                >
                   <option>Occasion</option>
                   <option value="No occasion">No Special Occasion</option>
                   <option value="Birthday">Birthday</option>
