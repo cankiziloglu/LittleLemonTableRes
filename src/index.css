@@ -470,8 +470,8 @@ h6 {
 
   .about-img img:nth-child(1) {
     position: absolute;
-    bottom: -6vw;
-    right: 22vw;
+    bottom: -20%;
+    right: 40%;
   }
 
   .about-p {
@@ -572,7 +572,6 @@ h6 {
 .orderpage-title h1 {
   font: var(--title);
 }
-
 
 /* ======================= */
 /* Booking Section  */
@@ -707,9 +706,7 @@ h6 {
   color: var(--primary-col-light);
 }
 
-
 @media screen and (min-width: 568px) {
-  
   .terms {
     grid-row: 6 / 7;
   }
@@ -730,8 +727,8 @@ h6 {
   .back-btn {
     grid-column: span 2;
     justify-self: start;
-    margin:1rem 0;
-    width: 60%
+    margin: 1rem 0;
+    width: 60%;
   }
 
   .confirm {
@@ -747,18 +744,16 @@ h6 {
 
   .confirm-text {
     grid-column: span 2;
-  } 
+  }
 
   .book-form label {
-    margin:0;
+    margin: 0;
   }
 
   .requests {
     grid-row: 5 / 7;
   }
 }
-
-
 
 /* ======================= */
 /* Confirmation Page  */
